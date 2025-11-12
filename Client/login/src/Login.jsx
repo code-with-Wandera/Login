@@ -1,6 +1,6 @@
 
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Login=() =>{
   return (
     <>
@@ -40,12 +40,12 @@ const Login=() =>{
           </button>
 
           <p className='mt-3 text-center'>You do not have an account and you agree to our terms and condition? Create an account here</p>
-          <button
+          <Link to='/register'
             type='button'
             className='btn btn-light border w-100 rounded-0'
           >
             Create Account
-          </button>
+          </Link>
         </form>
       </div>
     </div>
