@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Register = () => {
   return (
     <div className='d-flex justify-content-center align-items-center bg-secondary vh-100'>
@@ -51,12 +51,12 @@ const Register = () => {
           </button>
 
           <p className='mt-3 text-center'>Already have an account?</p>
-          <button
+          <Link to='/login'
             type='button'
             className='btn btn-light border w-100 rounded-0'
           >
             Login Here
-          </button>
+          </Link>
         </form>
       </div>
     </div>
