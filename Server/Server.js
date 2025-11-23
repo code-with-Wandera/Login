@@ -23,6 +23,4 @@ database:"signup"
 // Starting the server
 app.listen(8081,()=>{
     console.log("Server Running Successfully! ...");
-
-    
 })
