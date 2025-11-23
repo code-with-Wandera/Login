@@ -1,19 +1,25 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from axios
 const Register = () => {
 
-  const [vaues, setValues]= useState({
+  const [values, setValues]= useState({
     name:"",
     email:"",
     password:""
-  })
+  });
+
+  const handleSubmit =(event)=>{
+    event.preventDegault();
+    axios.post('http://localhost:8081/')
+  }
   return (
     <div className='d-flex justify-content-center align-items-center bg-secondary vh-100'>
       <div className='bg-white p-4 rounded w-25 shadow'>
         <h2 className='mb-4 text-center'>Sign Up</h2>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='mb-3'>
             <label htmlFor='name' className='form-label'>
               <strong>Name</strong>
@@ -23,6 +29,7 @@ const Register = () => {
               id='name'
               placeholder='Enter Name'
               name='name'
+              onChange={e => setValues({...values, name: e.target.value})}
               className='form-control rounded-0'
             />
           </div>
@@ -36,6 +43,7 @@ const Register = () => {
               id='email'
               placeholder='Enter Email'
               name='email'
+              onChange={e => setValues({...values, email: e.target.value})}
               className='form-control rounded-0'
             />
           </div>
@@ -49,6 +57,7 @@ const Register = () => {
               id='password'
               placeholder='Enter Password'
               name='password'
+              onChange={e => setValues({...values, password: e.target.value})}
               className='form-control rounded-0'
             />
           </div>
