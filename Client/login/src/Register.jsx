@@ -12,7 +12,9 @@ const Register = () => {
 
   const handleSubmit =(event)=>{
     event.preventDegault();
-    axios.post('http://localhost:8081/')
+    axios.post('http://localhost:8081/register', values)
+    .then(res =>console.log(res))
+    .then(err =>console.log(err));
   }
   return (
     <div className='d-flex justify-content-center align-items-center bg-secondary vh-100'>
