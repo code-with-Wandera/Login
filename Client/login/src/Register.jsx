@@ -1,6 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 const Register = () => {
+
+  const [vaues, setValues]= useState({
+    name:"",
+    email:"",
+    password:""
+  })
   return (
     <div className='d-flex justify-content-center align-items-center bg-secondary vh-100'>
       <div className='bg-white p-4 rounded w-25 shadow'>
